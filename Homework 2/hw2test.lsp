@@ -1,3 +1,5 @@
+; These are test cases from the spec as well as some that I've written.
+
 (print "(DFS '((A (B)) C (D))")
 (print (dfs '((a (b)) c (d))))
 (print (equal (dfs '((a (b)) c (d))) '(d c b a)))
