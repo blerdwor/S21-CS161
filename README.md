@@ -7,3 +7,4 @@ Taught by Professor Adnan Darwiche.
 | Homework | Score  |
 | -------- | ------ |
 | 1        | 100    |
+| 2        | 100    |
