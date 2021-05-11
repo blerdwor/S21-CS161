@@ -1,3 +1,5 @@
+; These are test cases from the spec as well as some that I've written
+
 ; test goal state
 (setq gs '((1 1 1 1 1 1)
            (1 0 0 0 0 1)
