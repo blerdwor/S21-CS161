@@ -9,11 +9,9 @@ Taught by Professor Adnan Darwiche.
 | 1        | 100    |
 | 2        | 100    |
 | 3        | 98.55* |
-| 4        | 80**   |
-| 5        | 97***  |
+| 4        | 100    |
+| 5        | 97**   |
 
 *"Heuristic Score - 18.55/20.00"
 
-**"20 tests were run. You passed 4 times."
-
-***"q4 p1 -3"
+**"q4 p1 -3"
