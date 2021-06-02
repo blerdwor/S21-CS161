@@ -1,0 +1,91 @@
+1.
+a) {A/x, A/y, B/z}
+   {x/A, y/A, z/B}
+
+b) {y/G(x,x), G(A,B)/y}
+   {y/G(x,x), G(A,B)/G(x,x)}
+   {y/G(x,x), A/x, B/x}
+   {y/G(x,x), x/A, x/B}
+   Can't unify because x can't be both A and B
+
+c) {x/B, A/y, z/z}
+   {x/B, y/A} 
+
+d) {Father(y)/Father(x), y/John}
+   {y/x, y/John}
+   {John/x, y/John}
+   {x/John, y/John}
+
+e) {Father(y)/x, y/x}
+   {Father(y)/y, y/x} 
+   Can't unify because y can't be unified with Father(y) as the term has y in it
+
+2. 
+a)
+   Ax (Food(x) => Likes(John,x))
+   Food(Apples)
+   Food(Chicken)
+   AxEy (Eats(y,x) & ~KilledBy(y,x) => Food(x))
+   ExAy (KilledBy(y,x) => ~Alive(y))
+   Eats(Bill, Peanuts) & Alive(Bill)
+   Ax (Eats(Bill,x) => Eats(Sue,x))
+
+b) 1. ~Food(x) | Likes(John,x))
+   2. Food(Apples)
+   3. Food(Chicken)
+   4. ~Eats(F(x),x) | KilledBy(F(x),x) | Food(x)
+   5. ~KilledBy(y,F(y)) | ~Alive(y)
+   6. Eats(Bill, Peanuts)
+   7. Alive(Bill)
+   8. ~Eats(Bill,x) | Eats(Sue,x) 
+   
+c) 9. ~Likes(John, Peanuts)                          (alpha)
+   10. ~Food(Peanuts)                                (1,9)  {Peanuts/x}
+   11. ~Eats(F(x),Peanuts) | KilledBy(F(x), Peanuts) (4,10) {Peanuts/x}
+   12. KilledBy(Bill, Peanuts)                       (6,11) {Peanuts/x, Bill/F(x)}
+   13. ~Alive(Bill)                                  (5,12) {Peanuts/x, Bill/F(x), Bill/y, Peanuts/F(y)}
+   14. contradiction                                 (7,13)
+
+d) 9. ~Eats(Sue,x)   (alpha) 
+   10. ~Eats(Bill,x) (8,9) 
+   11. contradiction (6,10) {Peanuts/x}
+   Sue eats Peanuts
+
+e) 
+New sentences:
+   AxEy ~Eats(x,y) => Die(x)
+   Ax Die(x) => ~Alive(x)
+   Alive(Bill)
+
+New clauses:
+   1. ~Food(x) | Likes(John,x))
+   2. Food(Apples)
+   3. Food(Chicken)
+   4. ~Eats(F(x),x) | KilledBy(F(x),x) | Food(x)
+   5. ~KilledBy(y,F(y)) | ~Alive(y)
+   6. Eats(x,y) | Die(x)
+   7. ~Die(x) | ~Alive(x)
+   8. Alive(Bill)
+   9. ~Eats(Bill,x) | Eats(Sue,x) 
+
+Resolution:
+   10. ~Eats(Sue,x) (alpha)
+   11. ~Die(Bill)   (7,8)  
+   12. Eats(Bill,x) (6,11) 
+   13. Eats(Sue,x)  (9,13)
+   The unifier did not provide a value for x, and we've exhausted the clause
+   that have Sue in them. So we can't answer what Sue eats.
+
+3. 
+(1). No
+(2). Yes
+(3). Because the first SAT instance (3 colors) is no but the second instance 
+     (4 colors) is yes, the smallet set of colors necessary to color the graph
+     is 4. 
+
+     Let x denote a node and y denote a color in (x, y). One such coloring 
+     could be this:
+     (1,red) (2,yellow) (7,green) (6,yellow) (5,green) (4,red) (3,blue)   
+(4). 8 is the minimum number of colors required to properly color graph2.
+
+
