@@ -12,6 +12,8 @@ Taught by Professor Adnan Darwiche.
 | 4        | 100    |
 | 5        | 97**   |
 | 6        | 100    |
+| 7        | 100    |
+| 8        |        |
 
 *"Heuristic Score - 18.55/20.00"
 
